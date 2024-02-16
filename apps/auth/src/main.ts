@@ -1,11 +1,14 @@
 import { NestFactory } from '@nestjs/core';
 import { AuthModule } from './auth.module';
-import { Logger, ValidationPipe } from '@nestjs/common';
+import { ValidationPipe } from '@nestjs/common';
+import { Logger } from 'nestjs-pino';
+import { ConfigService } from '@nestjs/config';
 
 async function bootstrap() {
   const app = await NestFactory.create(AuthModule);
+  const configService = app.get(ConfigService);
   app.useGlobalPipes(new ValidationPipe());
   app.useLogger(app.get(Logger));
-  await app.listen(3001);
+  await app.listen(configService.get('PORT'));
 }
 bootstrap();

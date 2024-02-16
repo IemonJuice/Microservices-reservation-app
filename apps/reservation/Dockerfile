@@ -22,8 +22,6 @@ COPY package.json ./
 
 COPY package-lock.json ./
 
-RUN npm install
-
 RUN npm install --prod
 
 COPY --from=development /usr/src/app/dist ./
