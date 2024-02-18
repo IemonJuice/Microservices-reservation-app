@@ -29,7 +29,7 @@ export class PaymentsService {
         payment_method_types: ['card'],
         currency: 'usd',
       });
-      this.notificationsService.emit('notify_email', { email });
+      this.notificationsService.emit('notify_email', { email, text: `Notifications of successful payment ${amount * 100} :)` });
       return payment;
     } catch (error) {
       console.error('Error processing payment:', error);
