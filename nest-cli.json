@@ -43,6 +43,24 @@
       "compilerOptions": {
         "tsConfigPath": "apps/payments/tsconfig.app.json"
       }
+    },
+    "notofications": {
+      "type": "application",
+      "root": "apps/notofications",
+      "entryFile": "main",
+      "sourceRoot": "apps/notofications/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/notofications/tsconfig.app.json"
+      }
+    },
+    "notifications": {
+      "type": "application",
+      "root": "apps/notifications",
+      "entryFile": "main",
+      "sourceRoot": "apps/notifications/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/notifications/tsconfig.app.json"
+      }
     }
   },
   "monorepo": true,
